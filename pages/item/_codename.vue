@@ -7,39 +7,19 @@
         }}</small>
         <h1 class="font-extrabold text-5xl">{{ contentItem.system.name }}</h1>
         <div class="mt-10">
-            <a target="_blank" :href="linkTemplate">
-                <button class="btn btn--primary">
-                    Edit item
-                    <div class="ml-3 bg-transparent">
-                        <svg
-                            width="12"
-                            height="12"
-                            viewBox="0 0 12 12"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <g clip-path="url(#clip0_1_2)">
-                                <path
-                                    fill-rule="evenodd"
-                                    clip-rule="evenodd"
-                                    d="M2.625 1.5C2.00368 1.5 1.5 2.00368 1.5 2.625V9.375C1.5 9.9963 2.00368 10.5 2.625 10.5H9.375C9.9963 10.5 10.5 9.9963 10.5 9.375V6.38282C10.5 6.17571 10.6679 6.00782 10.875 6.00782C11.0821 6.00782 11.25 6.17571 11.25 6.38282V9.375C11.25 10.4105 10.4105 11.25 9.375 11.25H2.625C1.58947 11.25 0.75 10.4105 0.75 9.375V2.625C0.75 1.58947 1.58947 0.75 2.625 0.75H5.62714C5.83424 0.75 6.00214 0.917895 6.00214 1.125C6.00214 1.33211 5.83424 1.5 5.62714 1.5H2.625ZM7.49951 1.125C7.49951 0.917895 7.6674 0.75 7.87448 0.75H10.875C10.9744 0.75 11.0698 0.78951 11.1402 0.859838C11.2105 0.930158 11.25 1.02554 11.25 1.125V4.12325C11.25 4.33037 11.0821 4.49825 10.875 4.49825C10.6679 4.49825 10.5 4.33037 10.5 4.12325V2.03033L6.70834 5.82198C6.5619 5.96843 6.32447 5.96843 6.17802 5.82198C6.03157 5.67553 6.03157 5.4381 6.17802 5.29166L9.96968 1.5H7.87448C7.6674 1.5 7.49951 1.33211 7.49951 1.125Z"
-                                    fill="white"
-                                />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_1_2">
-                                    <rect width="12" height="12" fill="white" />
-                                </clipPath>
-                            </defs>
-                        </svg>
-                    </div>
-                </button>
-            </a>
+            <button
+                class="btn btn--primary"
+                :data-kontent-item-id="contentItem.system.id"
+            >
+                Edit item
+            </button>
         </div>
     </div>
 </template>
 
 <script>
+import KontentSmartLink from '@kentico/kontent-smart-link';
+
 export default {
     name: 'MachinePage',
 
@@ -62,12 +42,26 @@ export default {
                 `https://preview-deliver.kontent.ai/${KONTENT_PROJECT_ID}/types/${contentItem.item.system.type}`
             );
 
-            const linkTemplate = `https://app.kontent.ai/goto/edit-item/project/${KONTENT_PROJECT_ID}/variant-codename/${contentItem.item.system.language}/item/${contentItem.item.system.id}`;
-
-            return { contentItem: contentItem.item, contentType, linkTemplate };
+            return {
+                contentItem: contentItem.item,
+                contentType,
+                KONTENT_PROJECT_ID,
+                KONTENT_PREVIEW_TOKEN,
+            };
         } catch (ex) {
             console.error(ex);
         }
+    },
+
+    mounted() {
+        const kontentSmartLink = KontentSmartLink.initializeOnLoad({
+            debug: true,
+            defaultDataAttributes: {
+                projectId: this.KONTENT_PROJECT_ID,
+                languageCodename: 'default',
+            },
+        });
+        kontentSmartLink.catch((ex) => console.log(ex));
     },
 };
 </script>
@@ -124,5 +118,22 @@ body {
     -webkit-user-select: none;
     user-select: none;
     white-space: nowrap;
+}
+
+:root {
+    --ksl-color-background-default: transparent;
+    --ksl-color-background-default-disabled: transparent;
+    --ksl-color-background-default-hover: transparent;
+    --ksl-color-background-secondary: transparent;
+    --ksl-color-background-default-selected: transparent;
+    --ksl-color-primary: transparent;
+    --ksl-color-primary-transparent: transparent;
+    --ksl-color-primary-hover: transparent;
+    --ksl-color-text-default: transparent;
+    --ksl-color-text-default-disabled: transparent;
+    --ksl-color-text-secondary: transparent;
+    --ksl-shadow-default: none;
+    --ksl-shadow-primary: none;
+    --ksl-z-index: 9000;
 }
 </style>
