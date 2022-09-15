@@ -2,25 +2,11 @@
     <div
         class="w-screen h-screen flex justify-center items-center flex-wrap flex-col"
     >
-        <div
-            :class="`${contentItem.system.workflow_step} rounded-xl px-3 py-1 text-white capitalize text-sm`"
-        >
-            {{ contentItem.system.workflow_step }}
-        </div>
         <small class="font-bold mb-4 mt-2 text-2xl">{{
             contentType.system.name
         }}</small>
         <h1 class="font-extrabold text-5xl">{{ contentItem.system.name }}</h1>
-        <!-- <div class="mt-3 flex flex-row justify-center items-center gap-x-10">
-            <div class="font-bold">
-                Please click "editor" at the top left corner to edit this item!
-            </div>
-        </div> -->
         <div class="mt-10">
-            <a :href="linkTemplate">
-                <button class="btn btn--primary">Edit item</button>
-            </a>
-            <div class="w-4"></div>
             <a target="_blank" :href="linkTemplate">
                 <button class="btn btn--primary">
                     Edit item
