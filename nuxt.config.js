@@ -14,13 +14,7 @@ export default {
             { hid: 'description', name: 'description', content: '' },
             { name: 'format-detection', content: 'telephone=no' },
         ],
-        link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-            {
-                rel: 'stylesheet',
-                href: 'https://unpkg.com/@picocss/pico@latest/css/pico.min.css',
-            },
-        ],
+        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
@@ -43,6 +37,7 @@ export default {
     modules: [
         // https://go.nuxtjs.dev/axios
         '@nuxtjs/axios',
+        '@nuxtjs/tailwindcss',
     ],
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
