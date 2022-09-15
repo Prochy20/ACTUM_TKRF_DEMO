@@ -15,6 +15,10 @@ export default {
             { name: 'format-detection', content: 'telephone=no' },
         ],
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+        bodyAttrs: {
+            'data-kontent-project-id': process.env.KONTENT_PROJECT_ID,
+            'data-kontent-language-codename': 'default',
+        },
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
