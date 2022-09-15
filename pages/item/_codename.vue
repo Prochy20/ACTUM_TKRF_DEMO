@@ -49,6 +49,7 @@ export default {
                 KONTENT_PREVIEW_TOKEN,
             };
         } catch (ex) {
+            // eslint-disable-next-line no-console
             console.error(ex);
         }
     },
@@ -61,6 +62,7 @@ export default {
                 languageCodename: 'default',
             },
         });
+        // eslint-disable-next-line no-console
         kontentSmartLink.catch((ex) => console.log(ex));
     },
 };
