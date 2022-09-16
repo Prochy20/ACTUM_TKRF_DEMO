@@ -2,10 +2,6 @@
     <div
         class="w-screen h-screen flex justify-center items-center flex-wrap flex-col"
     >
-        <img class="w-72" src="/actumdigital_rgb.png" />
-        <div class="mb-5 font-bold italic">
-            101 guidelines how to work with sandbox
-        </div>
         <a target="_blank" href="https://bit.ly/takrafdemo">
             <button class="btn btn--primary">
                 See the assemblies
