@@ -5,8 +5,8 @@
         <img class="w-64 mb-2" src="/actumdigital_rgb.png" />
         <div class="font-extrabold text-6xl">TAKRAF GmbH Sandbox</div>
         <div class="mb-24 mt-4 text-lg">
-            Please start with selecting item in the content tree on the left
-            hand side.
+            Please start with selecting item in the content tree on the
+            left-hand side.
         </div>
         <small class="font-bold mb-4 mt-2 text-2xl">{{
             contentType.system.name
