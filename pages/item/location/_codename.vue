@@ -37,6 +37,7 @@ import DownloadDocs from '~/components/downloadDocs.vue';
 
 export default {
     name: 'MachinePage',
+    components: { DownloadDocs },
     async asyncData({
         params,
         $axios,
@@ -63,6 +64,7 @@ export default {
             console.error(ex);
         }
     },
+
     mounted() {
         const kontentSmartLink = KontentSmartLink.initializeOnLoad({
             debug: true,
@@ -74,7 +76,6 @@ export default {
         // eslint-disable-next-line no-console
         kontentSmartLink.catch((ex) => console.log(ex));
     },
-    components: { DownloadDocs },
 };
 </script>
 <style>
