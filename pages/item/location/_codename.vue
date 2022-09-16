@@ -2,16 +2,17 @@
     <div
         class="w-screen h-screen flex justify-center items-center flex-wrap flex-col"
     >
-        <img
-            src="https://www.takraf.com/typo3conf/ext/epx_takraf/Resources/Public/Images/logo-blue-240x71.webp"
-            class="w-36 mx-auto"
-        />
-        <div class="font-extrabold text-6xl mb-24">TAKRAF GmbH Sandbox</div>
+        <img class="w-64 mb-2" src="/actumdigital_rgb.png" />
+        <div class="font-extrabold text-6xl">TAKRAF GmbH Sandbox</div>
+        <div class="mb-24 mt-4 text-lg">
+            Please start with selecting item in the content tree on the left
+            hand side.
+        </div>
         <small class="font-bold mb-4 mt-2 text-2xl">{{
             contentType.system.name
         }}</small>
         <h1 class="font-extrabold text-5xl">{{ contentItem.system.name }}</h1>
-        <div class="mt-10 flex flex-col flex-wrap gap-y-10">
+        <div class="mt-10">
             <button
                 class="btn btn--primary"
                 :data-kontent-item-id="contentItem.system.id"
@@ -36,7 +37,6 @@ import DownloadDocs from '~/components/downloadDocs.vue';
 
 export default {
     name: 'MachinePage',
-    components: { DownloadDocs },
     async asyncData({
         params,
         $axios,
@@ -74,6 +74,7 @@ export default {
         // eslint-disable-next-line no-console
         kontentSmartLink.catch((ex) => console.log(ex));
     },
+    components: { DownloadDocs },
 };
 </script>
 <style>

@@ -2,10 +2,7 @@
     <div
         class="w-screen h-screen flex justify-center items-center flex-wrap flex-col"
     >
-        <a
-            target="_blank"
-            href="https://www.takraf.com/fileadmin/takraf/02_about_us/05_download/general-documents/takraf-gmbh-disclaimer.pdf"
-        >
+        <a target="_blank" href="/takraf-gmbh-disclaimer.pdf" download>
             <button class="btn btn--primary">
                 Download project assets
                 <div class="ml-3 bg-transparent">
