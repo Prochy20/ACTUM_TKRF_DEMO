@@ -1,7 +1,7 @@
 <template>
     <a
         target="_blank"
-        href="https://wmcgroup-my.sharepoint.com/:w:/g/personal/vnovak_actum_cz/ERK14b8NVElGrEXsCy2CRMQBxLcrJJx-ey70tB3broMWJg"
+        href="https://wmcgroup-my.sharepoint.com/:w:/g/personal/vnovak_actum_cz/EQTiTfEvPA1CkfU-jh9SbN4BO8FASUFAmt006BUrwObS0A?rtime=N6J-WICa2kg"
         download
     >
         <button class="btn btn--primary">
